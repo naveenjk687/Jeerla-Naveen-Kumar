@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal information</title>
+    <style>
+    body{
+        font-family:Arial,sans-serif;
+        background: #000000;
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        max-width: 100px;
+        margin:60px auto ;
+        background: #1797b8;
+        padding: 3px;
+        border-radius:10px;
+        box-shadow:0 2px 8px rgba(red, green, blue, alpha)
+    }
+    .summary{
+        margin: bottom 3px;
+        padding-bottom:3px;
+        border-bottom: #d3baba;
+    }
+    .summary h2{
+        margin:2;
+        color: #1797b8;
+    }
+    .cards{
+        display:flex;
+        flex-wrap:wrap;
+        gap: 30px;
+    }
+    .card{
+        background: #d3baba;
+        border-radius: 2%;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+       padding: 40px;
+        flex: 1 2 230px;
+        min-width: 130px;
+        max-width: 100px;
+         display: flex;
+         flex-direction: column;
+        justify-content: first baseline;
+    }
+    .card h3{
+        margin-top: 3;
+        color: aqua;
+    }
+    @media (max-width:100px){
+        .cards{
+            flex-direction: calc();
+        }
+    }
+    </style>
+</head>
+</body>
+<div class="container">
+    <div class="summary">
+        <h2>personal information</h2>
+        <p>HTML is the standard markup language used to create and structure content on the web.
+        </p>
+    </div>
+</div>
+<div>
+  <h2>web Develoopment</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>1. Frontend Development (Client-Side)</h3>
+                    <p>
+                        
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>E-commerce Platform</h3>
+                    <p>
+                        Focuses on what users see and interact with in their browsers.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Backend Development</h3>
+                    <p>
+                        Handles the logic, database interactions, authentication, and data processing.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Database Management</h3>
+                    <p>
+                        Designed and deployed a personal portfolio website showcasing skills, experience, and projects, optimized for SEO and mobile devices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span>Vibe Coder</span>
+</body>
+</html>
