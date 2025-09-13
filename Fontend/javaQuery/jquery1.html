@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jQuery Example</title>
+  
+  <!-- Link to jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<h1>Hello, jQuery!</h1>
+  <button id="btn">Click me</button>  <div class ="temp">
+    <p>
+        this a jquery 
+    </p>
+</div>
+<input type="text" id="myInput">
+<p id="output">Hi this text</p>
+<ul id="list">
+  <li>Item 1</li>
+</ul>
+<button id="add">Add Item</button>
+<button id="addf">Add Ite first</button>
+<button id="remove">Remove Last</button>
+
+  <script>
+    // Your jQuery code here
+    $(document).ready(function() {
+      $("#btn").click(function() {
+        $("h1").text("button clicked");
+        $(".temp").css("background-color","pink");
+      });
+       $("#btn").dblclick(function() {
+        $("h1").text("button clicked");
+        $(".temp").css("background-color","lightblue");
+      });
+      $("#btn").hover(function() {
+        $("h1").text("button hovered");
+        $(".temp").css("background-color","red");
+      });
+    $("#add").click(function(){
+      $("#list").append("<li>New Item appended from script</li>");
+    });
+    $("#addf").click(function(){
+      $("#list").prepend("<li>New Item prepended from script</li>");
+    });
+    $("#remove").click(function(){
+      $("#list li:first").remove();
+    });
+      $("#myInput").keydown(function(){
+      let val = $("#myInput").val();
+      $("#output").text(val);
+    });
+    });
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
