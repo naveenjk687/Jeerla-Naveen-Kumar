@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>To Do List</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
@@ -12,89 +11,173 @@
             font-family: Arial, sans-serif;
         }
 
-        body {
-            background: #c1c9d3;
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    
 
-        h1 {
-            font-size: 36px;
-            color: #101114;
-        }
 
-        h2 {
-            font-size: 24px;
-            color: #030c18;
-            margin-bottom: 20px;
-        }
+body {
+    background: #f7f8fa;  /* very light gray */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
 
-        #list {
-            list-style-type: none;
-            padding: 0;
-            width: 300px;
-            margin-bottom: 30px;
-        }
+h1 {
+    font-size: 36px;
+    color: #444;  /* softer black */
+    margin-bottom: 0.2em;
+}
 
-        #list li {
-            background-color: #acd6ee;
-            border: 1px solid #73acbd;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+h2 {
+    font-size: 22px;
+    color: #666;  /* medium gray */
+    margin-bottom: 1.5em;
+}
 
-        #list li:hover {
-            background-color: #2d7ec0;
-        }
+#list {
+    list-style-type: none;
+    padding: 0;
+    width: 320px;
+    margin-bottom: 30px;
+}
 
-        #myInput {
-            padding: 10px;
-            width: 220px;
-            border: 1px solid #d6b6b6;
-            border-radius: 4px;
-            margin-right: 10px;
-            font-size: 16px;
-        }
+#list li {
+    background-color: #f1f5f4;
+    border: 1px solid #0c0c0b;
+    box-shadow: 0 1px 3px rgba(203, 218, 7, 0.08);
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        #add {
-            padding: 10px 20px;
-            background-color: #e2e7ec;
-            color: rgb(7, 8, 10);
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-        }
+#list li:hover {
+    background-color: #f1f1f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
-        #add:hover {
-            background-color: #080c11;
-        }
+#list li.completed span.task-text {
+    text-decoration: line-through;
+    color: #999;
+    font-style: italic;
+}
+
+button.complete-btn {
+    background-color: #a6dcef;  /* soft blue */
+    color: #055160;             /* dark teal */
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(5,81,96,0.3);
+}
+
+button.complete-btn:hover:not(:disabled) {
+    background-color: #81c9e6;
+    color: #2f2072;
+}
+
+button.complete-btn:disabled {
+    background-color: #d5e21e;
+    color: #804b4b;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#myInput {
+    padding: 10px 14px;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease;
+}
+
+#myInput:focus {
+    outline: none;
+    border-color: #81c9e6;
+    box-shadow: 0 0 6px #a6dcef;
+}
+
+#add {
+    padding: 10px 20px;
+    background-color: #18a8ad;
+    color: #94b3ec;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(218, 227, 230, 0.3);
+}
+
+#add:hover {
+    background-color: #81c9e6;
+    color: #111111;
+}
+
+            
+            
     </style>
 </head>
 <body>
-    <h1>java Script Example</h1>
-    <h2>they are multiple tasks are in java queries</h2>
+    <h1>JavaScript Example</h1>
+    <h2>They are multiple tasks are in java queries</h2>
     <ul id="list">
-        <li>Task 1</li>
-        <li>Task 2</li>
-        <li>Task 3</li>
+        <li>
+            <span class="task-text">Task 1</span>
+            <button class="complete-btn">Complete</button>
+        </li>
+        <li>
+            <span class="task-text">Task 2</span>
+            <button class="complete-btn">Complete</button>
+        </li>
+        <li>
+            <span class="task-text">Task 3</span>
+            <button class="complete-btn">Complete</button>
+        </li>
     </ul>
-    <input type="text" id="myInput" placeholder="Enter a new task"></br>   
-     <button id="add">Add</button>
+    <input type="text" id="myInput" placeholder="Enter a new task" /><br /><br />
+    <button id="add">Add</button>
 
     <script>
         $(document).ready(function () {
+            // Function to add new task with complete button
+            function addTask(taskText) {
+                let li = $('<li></li>');
+                let span = $('<span class="task-text"></span>').text(taskText);
+                let btn = $('<button class="complete-btn">Complete</button>');
+
+                // Append span and button to li
+                li.append(span).append(btn);
+                $("#list").append(li);
+            }
+
+            // Add initial tasks with buttons
+            // Already added in HTML, but function is reusable
+
+            // Handle Add button click
             $("#add").click(function () {
                 let task = $("#myInput").val().trim();
                 if (task) {
-                    $("#list").append("<li>" + task + "</li>");
-                    $("#myInput").val(""); // Clear input after adding
+                    addTask(task);
+                    $("#myInput").val("");
                 }
+            });
+
+            // Event delegation to handle click on dynamically added buttons
+            $("#list").on("click", ".complete-btn", function () {
+                let li = $(this).closest("li");
+                li.addClass("completed");
+                $(this).prop("disabled", true);
             });
         });
     </script>
