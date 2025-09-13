@@ -52,7 +52,7 @@ h2 {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     justify-content: space-between;
-    align-items: first baseline;
+    align-items: center;
 }
 
 #list li:hover {
@@ -60,13 +60,13 @@ h2 {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-#list li.completed span.task-text {
+#list li.Confirm span.task-text {
     text-decoration: line-through;
     color: #999;
     font-style: italic;
 }
 
-button.complete-btn {
+button.Confirm-btn {
     background-color: #a6dcef;  /* soft blue */
     color: #055160;             /* dark teal */
     border: none;
@@ -78,12 +78,12 @@ button.complete-btn {
     box-shadow: 0 1px 3px rgba(5,81,96,0.3);
 }
 
-button.complete-btn:hover:not(:disabled) {
+button.Confirm-btn:hover:not(:disabled) {
     background-color: #81c9e6;
     color: #2f2072;
 }
 
-button.complete-btn:disabled {
+button.Confirm-btn:disabled {
     background-color: #d5e21e;
     color: #804b4b;
     cursor: not-allowed;
@@ -134,15 +134,15 @@ button.complete-btn:disabled {
     <ul id="list">
         <li>
             <span class="task-text">Task 1</span>
-            <button class="complete-btn">Complete</button>
+            <button class="Confirm-btn">Confirm</button>
         </li>
         <li>
             <span class="task-text">Task 2</span>
-            <button class="complete-btn">Complete</button>
+            <button class="Confirm-btn">Confirm</button>
         </li>
         <li>
             <span class="task-text">Task 3</span>
-            <button class="complete-btn">Complete</button>
+            <button class="Confirm-btn">Confirm</button>
         </li>
     </ul>
     <input type="text" id="myInput" placeholder="Enter a new task" /><br /><br />
@@ -150,11 +150,11 @@ button.complete-btn:disabled {
 
     <script>
         $(document).ready(function () {
-            // Function to add new task with complete button
+            // Function to add new task with Confirm button
             function addTask(taskText) {
                 let li = $('<li></li>');
                 let span = $('<span class="task-text"></span>').text(taskText);
-                let btn = $('<button class="complete-btn">Complete</button>');
+                let btn = $('<button class="Confirm-btn">Confirm</button>');
 
                 // Append span and button to li
                 li.append(span).append(btn);
@@ -174,9 +174,9 @@ button.complete-btn:disabled {
             });
 
             // Event delegation to handle click on dynamically added buttons
-            $("#list").on("click", ".complete-btn", function () {
+            $("#list").on("click", ".Confirm-btn", function () {
                 let li = $(this).closest("li");
-                li.addClass("completed");
+                li.addClass("Confirmd");
                 $(this).prop("disabled", true);
             });
         });
