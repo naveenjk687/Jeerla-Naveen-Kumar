@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #c1c9d3;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #101114;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #030c18;
+            margin-bottom: 20px;
+        }
+
+        #list {
+            list-style-type: none;
+            padding: 0;
+            width: 300px;
+            margin-bottom: 30px;
+        }
+
+        #list li {
+            background-color: #acd6ee;
+            border: 1px solid #73acbd;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #list li:hover {
+            background-color: #2d7ec0;
+        }
+
+        #myInput {
+            padding: 10px;
+            width: 220px;
+            border: 1px solid #d6b6b6;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        #add {
+            padding: 10px 20px;
+            background-color: #e2e7ec;
+            color: rgb(7, 8, 10);
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        #add:hover {
+            background-color: #080c11;
+        }
+    </style>
+</head>
+<body>
+    <h1>java Script Example</h1>
+    <h2>they are multiple tasks are in java queries</h2>
+    <ul id="list">
+        <li>Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li>
+    </ul>
+    <input type="text" id="myInput" placeholder="Enter a new task"></br>   
+     <button id="add">Add</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#add").click(function () {
+                let task = $("#myInput").val().trim();
+                if (task) {
+                    $("#list").append("<li>" + task + "</li>");
+                    $("#myInput").val(""); // Clear input after adding
+                }
+            });
+        });
+    </script>
+</body>
+</html>
