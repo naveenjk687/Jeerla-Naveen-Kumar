@@ -7,12 +7,12 @@ function App() {
   return (
     <BrowserRouter>
       <nav>
-        <Link to="/home">Home</Link> &nbsp;
+        <Link to="/Home">Home</Link> &nbsp;
         <Link to="/about">About Us</Link> &nbsp;
         <Link to="/contact">Contact Us</Link>
       </nav>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
