@@ -9,3 +9,12 @@ for(i=10;i<=90;i+=10){
 }
 distance=distance+speed/10;
 console.log(distance);
+
+
+
+
+
+
+
+
+
